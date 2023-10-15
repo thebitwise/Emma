@@ -1,3 +1,13 @@
+--$$\        $$$$$$\  $$\   $$\  $$$$$$\  $$$$$$$$\ 
+--$$ |      $$  __$$\ $$$\  $$ |$$  __$$\ $$  _____|
+--$$ |      $$ /  $$ |$$$$\ $$ |$$ /  \__|$$ |      
+--$$ |      $$$$$$$$ |$$ $$\$$ |$$ |      $$$$$\    
+--$$ |      $$  __$$ |$$ \$$$$ |$$ |      $$  __|   
+--$$ |      $$ |  $$ |$$ |\$$$ |$$ |  $$\ $$ |      
+--$$$$$$$$\ $$ |  $$ |$$ | \$$ |\$$$$$$  |$$$$$$$$\ 
+--\________|\__|  \__|\__|  \__| \______/ \________|
+-- coded by Lance/stonerchrist on Discord
+
 util.require_natives("2944b", "g")
 local root = menu.my_root()
 
@@ -17,27 +27,27 @@ local vib_toggle = root:toggle_loop("Vibrate", {"vibrate"}, "Yes.", function()
     local mode = tonumber(mode)
     pluto_switch mode do
         case 1:
-            PAD.SET_CONTROL_SHAKE(0, 10, stren)
+            SET_CONTROL_SHAKE(0, 10, stren)
             break
         case 2:
             for i=10, 255 do
-                PAD.SET_CONTROL_SHAKE(0, 100, i)
+                SET_CONTROL_SHAKE(0, 100, i)
                 util.yield(10)
             end
             break
         case 3: 
-            PAD.SET_CONTROL_SHAKE(0, 100, math.random(10, 255))
+            SET_CONTROL_SHAKE(0, 100, math.random(10, 255))
             break
         case 4:
-            PAD.SET_CONTROL_SHAKE(0, 100, stren)
+            SET_CONTROL_SHAKE(0, 100, stren)
             util.yield(300)
             break
         case 5:
-            PAD.SET_CONTROL_SHAKE(0, 100, stren)
+            SET_CONTROL_SHAKE(0, 100, stren)
             util.yield(500)
             break
         case 6:
-            PAD.SET_CONTROL_SHAKE(0, 100, stren)
+            SET_CONTROL_SHAKE(0, 100, stren)
             util.yield(1000)
             break
         case 7:
@@ -48,7 +58,7 @@ local vib_toggle = root:toggle_loop("Vibrate", {"vibrate"}, "Yes.", function()
                     rpm = 10
                 end
                 util.draw_debug_text(rpm)
-                PAD.SET_CONTROL_SHAKE(0, 100, rpm)
+                SET_CONTROL_SHAKE(0, 100, rpm)
                 break
                 util.yield(100)
             end

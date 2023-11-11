@@ -25,7 +25,7 @@ end)
 
 local vib_toggle = root:toggle_loop("Vibrate", {"vibrate"}, "Yes.", function()
     local mode = tonumber(mode)
-    pluto_switch mode do
+    switch mode do
         case 1:
             SET_CONTROL_SHAKE(0, 10, stren)
             break
@@ -138,7 +138,7 @@ chat.on_message(function(sender, reserved, text, team_chat, networked, is_auto)
             return 
         end
 
-        pluto_switch command[1] do
+        switch command[1] do
             case 'setpattern':
                 local pattern_tn = tonumber(command[2])
                 if pattern_tn == nil or pattern_tn > num_patterns or pattern_tn < 0 then 
